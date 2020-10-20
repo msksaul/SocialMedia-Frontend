@@ -10,9 +10,7 @@ import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import MuiLink from '@material-ui/core/Link'
-import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
-import Tooltip from '@material-ui/core/Tooltip'
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn'
 
 import LocationOn from '@material-ui/icons/LocationOn'
@@ -128,7 +126,7 @@ class Profile extends Component {
             <CalendarToday color='primary'/>{' '}
             <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
           </div>
-          <MyButton tip='Logout' onclick={this.handleLogout}>
+          <MyButton tip='Logout' onClick={this.handleLogout}>
               <KeyboardReturn color='primary'/>
           </MyButton>
           <EditDetails/>

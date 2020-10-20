@@ -1,0 +1,1 @@
+export const baseUrl = 'https://us-central1-social-media-app-c6a0e.cloudfunctions.net/api'

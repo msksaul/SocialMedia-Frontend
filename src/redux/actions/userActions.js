@@ -1,9 +1,10 @@
 import { SET_USER, SET_ERRORS, CLEAR_ERRORS, LOADING_UI, SET_UNAUTHENTICATED, LOADING_USER } from '../types'
 import axios from 'axios'
+import { baseUrl } from '../../util/baseUrl'
 
 export const loginUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI })
-  axios.post('/login', userData)
+  axios.post(baseUrl + '/login', userData)
       .then(res => {
         setAuthorizationHeader(res.data.token)
         dispatch(getUserData())
@@ -26,7 +27,7 @@ export const logoutUser = () => (dispatch) => {
 
 export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_USER })
-  axios.get('/user')
+  axios.get(baseUrl + '/user')
     .then(res => {
       dispatch({
         type: SET_USER,
@@ -38,7 +39,7 @@ export const getUserData = () => (dispatch) => {
 
 export const signupUser = (newUserData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI })
-  axios.post('/signup', newUserData)
+  axios.post(baseUrl + '/signup', newUserData)
       .then(res => {
         setAuthorizationHeader(res.data.token)
         dispatch(getUserData())
@@ -55,7 +56,7 @@ export const signupUser = (newUserData, history) => (dispatch) => {
 
 export const uploadImage = (formData) => (dispatch) => {
   dispatch({ type: LOADING_USER })
-  axios.post('/user/image', formData)
+  axios.post(baseUrl + '/user/image', formData)
     .then(() => {
       dispatch(getUserData())
     })
@@ -64,7 +65,7 @@ export const uploadImage = (formData) => (dispatch) => {
 
 export const editUserDetails = (userDetails) => (dispatch) => {
   dispatch({ type: LOADING_USER })
-  axios.post('/user', userDetails)
+  axios.post(baseUrl + '/user', userDetails)
     .then(() => {
       dispatch(getUserData())
     })
