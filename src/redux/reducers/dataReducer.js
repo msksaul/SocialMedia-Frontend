@@ -28,6 +28,9 @@ export default function(state = initialState, action) {
     case UNLIKE_SCREAM:
       let indexU = state.screams.findIndex((scream) => scream.screamId === action.payload.screamId)
       state.screams[indexU] = action.payload
+      if(state.scream.screamId === action.payload.screamId) {
+        state.scream = action.payload
+      }
       return {
         ...state
       }
