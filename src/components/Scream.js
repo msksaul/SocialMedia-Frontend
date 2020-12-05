@@ -3,6 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import PropTypes from 'prop-types'
 import MyButton from '../util/MyButton'
 import DeleteScream from './DeleteScream'
+import ScreamDialog from './ScreamDialog'
 
 import { Link } from 'react-router-dom'
 
@@ -93,6 +94,7 @@ export class Scream extends Component {
             <ChatIcon color='primary'/>
           </MyButton>
           <span>{commentCount} Comments</span>
+          <ScreamDialog screamId={screamId} userHandle={userHandle}/>
         </CardContent>
       </Card>
     )
