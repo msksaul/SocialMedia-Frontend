@@ -11,7 +11,7 @@ import { logoutUser, getUserData } from './redux/actions/userActions'
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
-import Navbar from './components/Navbar'
+import Navbar from './components/layout/Navbar'
 import AuthRoute from './util/AuthRoute'
 
 import home from './pages/home'
