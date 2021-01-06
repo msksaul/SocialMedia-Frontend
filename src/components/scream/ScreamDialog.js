@@ -11,7 +11,6 @@ import CommentForm from './CommentForm'
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
@@ -22,8 +21,6 @@ import ChatIcon from '@material-ui/icons/Chat'
 
 import { connect } from 'react-redux'
 import { getScream, clearErrors } from '../../redux/actions/dataActions'
-import { ThreeSixty } from '@material-ui/icons'
-import { user } from '../../pages/user'
 
 const styles = theme => ({
   ...theme.formType,

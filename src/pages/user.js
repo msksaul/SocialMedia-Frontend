@@ -5,6 +5,8 @@ import { baseUrl } from '../util/baseUrl'
 import Scream from '../components/scream/Scream'
 import Grid from '@material-ui/core/Grid'
 import StaticProfile from '../components/profile/StaticProfile'
+import ScreamSkeleton from '../util/ScreamSkeleton'
+import ProfileSkeleton from '../util/ProfileSkeleton'
 
 import { connect } from 'react-redux'
 
@@ -39,7 +41,7 @@ export class user extends Component {
     const { screamIdParam } = this.state 
 
     const screamsMarkup = loading ? (
-      <p>Loading data...</p>
+      <ScreamSkeleton/>
     ) : screams === null ? (
       <p>No screams from this user</p>
     ) : !screamIdParam ? (
@@ -53,13 +55,13 @@ export class user extends Component {
     )
 
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={4}>
         <Grid item sm={8} xs={12}>
           {screamsMarkup}
         </Grid>
         <Grid item sm={4} xs={12}>
           {this.state.profile === null ? (
-            <p>Loading profile...</p>
+            <ProfileSkeleton/>
           ) : (<StaticProfile profile={this.state.profile}/>)}
         </Grid>
       </Grid>

@@ -10,7 +10,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
 
-import AddIcon from '@material-ui/icons/Add'
 import Homeicon from '@material-ui/icons/Home'
 
 export class Navbar extends Component {
